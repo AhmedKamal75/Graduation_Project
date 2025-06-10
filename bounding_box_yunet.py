@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 import time
+import os # Added for os.path.basename
 
 class YuNetFaceDetector():
     """
@@ -121,48 +122,89 @@ def test():
     counter = Counter(start=30, end=35, step=1)
     running = True
 
-    while running:
+    cv2.namedWindow("frame", cv2.WINDOW_NORMAL)  # Create window once
+    cv2.resizeWindow("frame", 1000, 900)        # Resize window once
 
+    while running:
         # image_path = f"images/Alexandra Daddario/Alexandra Daddario_{counter.count}.jpg"
         image_path = f"images/Zac Efron/Zac Efron_{counter.count}.jpg"
+        print(f"Loading image: {image_path}")
+
         frame = cv2.imread(image_path)
-        bboxes = yunet_detector.predict_bounding_box(frame)
-        for bbox in bboxes:
-            cropped_face = yunet_detector.crop_face(frame, bbox)
-            frame = yunet_detector.draw_bounding_box(frame, bbox)
-            # Show frame with bounding box and cropped face concatenated horizontally
-            frame_height = frame.shape[0]
-            cropped_face_resized = cv2.resize(
-                cropped_face,
-                (int(cropped_face.shape[1] * (frame_height / cropped_face.shape[0])), frame_height)
-            )
-            display_frame = np.concatenate((frame, cropped_face_resized), axis=1)
-            cv2.namedWindow("frame", cv2.WINDOW_NORMAL)
-            cv2.resizeWindow("frame", 1000, 900)
-            cv2.imshow("frame", display_frame)
+        display_image = None
+
+        if frame is None:
+            print(f"Error: Could not read image at {image_path}. Skipping.")
+            display_image = np.zeros((600, 800, 3), dtype=np.uint8) # Blank image for error
+            cv2.putText(display_image, f"Error loading: {os.path.basename(image_path)}", (50, 300),
+                        cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+        else:
+            original_frame_for_crop = frame.copy()
+            frame_for_display = frame.copy()
+
+            bboxes = yunet_detector.predict_bounding_box(original_frame_for_crop)
+
+            if bboxes:
+                bbox = bboxes[0]  # Process the first detected face
+
+                x1_orig, y1_orig, x2_orig, y2_orig = bbox
+                h_img, w_img, _ = original_frame_for_crop.shape
+                x1 = max(0, x1_orig)
+                y1 = max(0, y1_orig)
+                x2 = min(w_img, x2_orig)
+                y2 = min(h_img, y2_orig)
+
+                if x2 > x1 and y2 > y1: # Check for valid bbox after clamping
+                    yunet_detector.draw_bounding_box(frame_for_display, (x1, y1, x2, y2))
+                    cropped_face = yunet_detector.crop_face(original_frame_for_crop, (x1, y1, x2, y2))
+
+                    if cropped_face is not None and cropped_face.size > 0:
+                        try:
+                            frame_height_display = frame_for_display.shape[0]
+                            if cropped_face.shape[0] > 0 and cropped_face.shape[1] > 0: # Ensure valid dimensions
+                                target_height = frame_height_display
+                                aspect_ratio = cropped_face.shape[1] / cropped_face.shape[0]
+                                target_width = int(target_height * aspect_ratio)
+                                
+                                cropped_face_resized = cv2.resize(cropped_face, (target_width, target_height))
+                                display_image = np.concatenate((frame_for_display, cropped_face_resized), axis=1)
+                            else:
+                                print(f"Warning: Cropped face for {image_path} has zero dimension. Displaying frame with bbox.")
+                                display_image = frame_for_display
+                        except cv2.error as e:
+                            print(f"OpenCV error during resize/concat for {image_path}: {e}")
+                            display_image = frame_for_display
+                        except Exception as e:
+                            print(f"Unexpected error during resize/concat for {image_path}: {e}")
+                            display_image = frame_for_display
+                    else:
+                        print(f"Warning: Cropped face is empty for {image_path}. Displaying frame with bbox.")
+                        display_image = frame_for_display
+                else:
+                    print(f"Warning: Invalid bounding box after clamping for {image_path}. Displaying original frame.")
+                    display_image = frame_for_display
+            else:
+                print(f"No face detected in {image_path}.")
+                display_image = frame_for_display
+
+        if display_image is not None:
+            cv2.imshow("frame", display_image)
+        else: # Fallback if display_image somehow remains None
+            error_fallback_img = np.zeros((600, 800, 3), dtype=np.uint8)
+            cv2.putText(error_fallback_img, "Error displaying image", (50, 300),
+                        cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+            cv2.imshow("frame", error_fallback_img)
             
-        # Wait 'q', 'Esc', or close button is pressed
-        key = cv2.waitKey(1) & 0xFF
-        while key == 255:
-            time.sleep(0.001)
-            key = cv2.waitKey(1) & 0xFF
+        key = cv2.waitKey(0) & 0xFF # Wait indefinitely for a key press
             
-        if key == ord('q') or key == 27 or cv2.getWindowProperty("frame", cv2.WND_PROP_VISIBLE) < 1:
+        if key == ord('q') or key == 27 or cv2.getWindowProperty("frame", cv2.WND_PROP_VISIBLE) < 1: # q, Esc, or window closed
             cv2.destroyAllWindows()
             running = False
-            
-        # if left arrow key is pressed then decrement the counter
-        elif key == 81:
+        elif key == ord('a'):  # 'a' for previous/decrement
             counter.decrement()
-            running = True
-            
-        # if right arrow key is pressed then increment the counter
-        elif key == 83:
+        elif key == ord('d'):  # 'd' for next/increment
             counter.increment()
-            running = True
-            
-        else:
-            running = True
+        # Any other key will re-evaluate the loop with the current (or new) counter value
             
     cv2.destroyAllWindows()
     return

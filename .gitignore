@@ -1,0 +1,15 @@
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Model files (specifically the large one)
+models/resarksgd/resarksgdaug94.pth
+
+# Log files
+*.log
+
+# IDE/Editor specific files (optional, but good practice)
+.vscode/
+.idea/
+*.DS_Store

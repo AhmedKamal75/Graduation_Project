@@ -882,3 +882,319 @@
 2025-01-11 14:02:50,926 - INFO - Distance to ahmed_morning: 0.6904682815074921
 2025-01-11 14:02:50,926 - INFO - Distance to empty: 0.8575569987297058
 2025-01-11 14:02:50,926 - INFO - Distance to alexa: 1.0143007701262832
+2025-06-08 22:09:28,404 - ERROR - Frame processing error: OpenCV(4.11.0) D:\a\opencv-python\opencv-python\opencv\modules\imgproc\src\resize.cpp:4208: error: (-215:Assertion failed) !ssize.empty() in function 'cv::resize'
+
+2025-06-08 22:16:18,570 - INFO - Registered ahmed_kamal with ID 20250608_221618
+2025-06-08 22:16:34,372 - INFO - Distance to Mohammed: 1.0515202283859253
+2025-06-08 22:16:34,372 - INFO - Distance to Ahmed: 0.9819826483726501
+2025-06-08 22:16:34,373 - INFO - Distance to kamal: 0.9172748327255249
+2025-06-08 22:16:34,373 - INFO - Distance to moamad4e: 0.9577822089195251
+2025-06-08 22:16:34,374 - INFO - Distance to yousef: 1.0368328094482422
+2025-06-08 22:16:34,374 - INFO - Distance to ahmed_morning: 0.9945046305656433
+2025-06-08 22:16:34,375 - INFO - Distance to empty: 0.8646103739738464
+2025-06-08 22:16:34,375 - INFO - Distance to alexa: 1.1326061487197876
+2025-06-08 22:16:34,376 - INFO - Distance to ahmed_kamal: 0.08669960498809814
+2025-06-08 22:16:51,394 - INFO - Distance to Mohammed: 1.0150319337844849
+2025-06-08 22:16:51,395 - INFO - Distance to Ahmed: 0.9352297782897949
+2025-06-08 22:16:51,396 - INFO - Distance to kamal: 0.9641867876052856
+2025-06-08 22:16:51,396 - INFO - Distance to moamad4e: 0.9480135440826416
+2025-06-08 22:16:51,397 - INFO - Distance to yousef: 1.0177321434020996
+2025-06-08 22:16:51,398 - INFO - Distance to ahmed_morning: 0.9826726317405701
+2025-06-08 22:16:51,399 - INFO - Distance to empty: 0.8748089671134949
+2025-06-08 22:16:51,400 - INFO - Distance to alexa: 1.107238531112671
+2025-06-08 22:16:51,401 - INFO - Distance to ahmed_kamal: 0.14342808723449707
+2025-06-08 22:16:53,756 - INFO - Distance to Mohammed: 0.9862856864929199
+2025-06-08 22:16:53,757 - INFO - Distance to Ahmed: 0.8848468661308289
+2025-06-08 22:16:53,758 - INFO - Distance to kamal: 0.9344074130058289
+2025-06-08 22:16:53,758 - INFO - Distance to moamad4e: 0.9464544057846069
+2025-06-08 22:16:53,759 - INFO - Distance to yousef: 1.0440460443496704
+2025-06-08 22:16:53,759 - INFO - Distance to ahmed_morning: 0.9534021615982056
+2025-06-08 22:16:53,760 - INFO - Distance to empty: 0.8718973994255066
+2025-06-08 22:16:53,760 - INFO - Distance to alexa: 1.0881097316741943
+2025-06-08 22:16:53,761 - INFO - Distance to ahmed_kamal: 0.1375194787979126
+2025-06-08 22:16:59,547 - INFO - Distance to Mohammed: 1.0355781316757202
+2025-06-08 22:16:59,549 - INFO - Distance to Ahmed: 0.9671640992164612
+2025-06-08 22:16:59,550 - INFO - Distance to kamal: 1.0246728658676147
+2025-06-08 22:16:59,550 - INFO - Distance to moamad4e: 0.9910675883293152
+2025-06-08 22:16:59,551 - INFO - Distance to yousef: 1.1037627458572388
+2025-06-08 22:16:59,551 - INFO - Distance to ahmed_morning: 1.0410603284835815
+2025-06-08 22:16:59,551 - INFO - Distance to empty: 0.9179614782333374
+2025-06-08 22:16:59,552 - INFO - Distance to alexa: 1.1153271198272705
+2025-06-08 22:16:59,552 - INFO - Distance to ahmed_kamal: 0.18504387140274048
+2025-06-08 22:17:04,386 - INFO - Distance to Mohammed: 1.0521230697631836
+2025-06-08 22:17:04,387 - INFO - Distance to Ahmed: 0.9023833274841309
+2025-06-08 22:17:04,388 - INFO - Distance to kamal: 0.9668006300926208
+2025-06-08 22:17:04,388 - INFO - Distance to moamad4e: 1.0060322284698486
+2025-06-08 22:17:04,388 - INFO - Distance to yousef: 1.05220627784729
+2025-06-08 22:17:04,389 - INFO - Distance to ahmed_morning: 1.0139724016189575
+2025-06-08 22:17:04,389 - INFO - Distance to empty: 0.9184015393257141
+2025-06-08 22:17:04,390 - INFO - Distance to alexa: 1.110671877861023
+2025-06-08 22:17:04,390 - INFO - Distance to ahmed_kamal: 0.1646287441253662
+2025-06-08 22:18:18,580 - INFO - Distance to Mohammed: 1.1260486841201782
+2025-06-08 22:18:18,580 - INFO - Distance to Ahmed: 0.9731316566467285
+2025-06-08 22:18:18,581 - INFO - Distance to kamal: 1.0589629411697388
+2025-06-08 22:18:18,581 - INFO - Distance to moamad4e: 1.0634794235229492
+2025-06-08 22:18:18,581 - INFO - Distance to yousef: 1.1194180250167847
+2025-06-08 22:18:18,582 - INFO - Distance to ahmed_morning: 1.0148452520370483
+2025-06-08 22:18:18,582 - INFO - Distance to empty: 0.9552439451217651
+2025-06-08 22:18:18,583 - INFO - Distance to alexa: 1.1653003692626953
+2025-06-08 22:18:18,583 - INFO - Distance to ahmed_kamal: 0.13260012865066528
+2025-06-08 22:18:23,405 - INFO - Distance to Mohammed: 0.9317966103553772
+2025-06-08 22:18:23,406 - INFO - Distance to Ahmed: 0.8578301668167114
+2025-06-08 22:18:23,407 - INFO - Distance to kamal: 0.8495615720748901
+2025-06-08 22:18:23,408 - INFO - Distance to moamad4e: 0.8762774467468262
+2025-06-08 22:18:23,409 - INFO - Distance to yousef: 0.9728039503097534
+2025-06-08 22:18:23,410 - INFO - Distance to ahmed_morning: 0.951491117477417
+2025-06-08 22:18:23,410 - INFO - Distance to empty: 0.8221341371536255
+2025-06-08 22:18:23,411 - INFO - Distance to alexa: 0.989691436290741
+2025-06-08 22:18:23,411 - INFO - Distance to ahmed_kamal: 0.3063521981239319
+2025-06-08 22:18:29,720 - INFO - Distance to Mohammed: 1.0817315578460693
+2025-06-08 22:18:29,721 - INFO - Distance to Ahmed: 0.9418470859527588
+2025-06-08 22:18:29,721 - INFO - Distance to kamal: 0.9567156434059143
+2025-06-08 22:18:29,722 - INFO - Distance to moamad4e: 0.999397337436676
+2025-06-08 22:18:29,722 - INFO - Distance to yousef: 1.1171869039535522
+2025-06-08 22:18:29,723 - INFO - Distance to ahmed_morning: 1.0193524360656738
+2025-06-08 22:18:29,724 - INFO - Distance to empty: 0.9191140532493591
+2025-06-08 22:18:29,725 - INFO - Distance to alexa: 1.1096911430358887
+2025-06-08 22:18:29,725 - INFO - Distance to ahmed_kamal: 0.24642318487167358
+2025-06-08 22:18:32,804 - INFO - Distance to Mohammed: 1.0422046184539795
+2025-06-08 22:18:32,804 - INFO - Distance to Ahmed: 0.9715137481689453
+2025-06-08 22:18:32,805 - INFO - Distance to kamal: 0.9694918394088745
+2025-06-08 22:18:32,806 - INFO - Distance to moamad4e: 0.9732840657234192
+2025-06-08 22:18:32,807 - INFO - Distance to yousef: 1.103581190109253
+2025-06-08 22:18:32,807 - INFO - Distance to ahmed_morning: 1.069659948348999
+2025-06-08 22:18:32,808 - INFO - Distance to empty: 0.9144837856292725
+2025-06-08 22:18:32,808 - INFO - Distance to alexa: 1.0478312969207764
+2025-06-08 22:18:32,809 - INFO - Distance to ahmed_kamal: 0.25286853313446045
+2025-06-08 22:18:39,448 - INFO - Distance to Mohammed: 1.023659348487854
+2025-06-08 22:18:39,450 - INFO - Distance to Ahmed: 0.9365901947021484
+2025-06-08 22:18:39,451 - INFO - Distance to kamal: 0.932293713092804
+2025-06-08 22:18:39,451 - INFO - Distance to moamad4e: 0.9402948021888733
+2025-06-08 22:18:39,453 - INFO - Distance to yousef: 1.1034499406814575
+2025-06-08 22:18:39,453 - INFO - Distance to ahmed_morning: 1.0080316066741943
+2025-06-08 22:18:39,454 - INFO - Distance to empty: 0.8804641962051392
+2025-06-08 22:18:39,455 - INFO - Distance to alexa: 1.0203423500061035
+2025-06-08 22:18:39,455 - INFO - Distance to ahmed_kamal: 0.24480342864990234
+2025-06-08 22:18:40,999 - INFO - Distance to Mohammed: 1.0384677648544312
+2025-06-08 22:18:41,000 - INFO - Distance to Ahmed: 0.9432388544082642
+2025-06-08 22:18:41,000 - INFO - Distance to kamal: 0.9491746425628662
+2025-06-08 22:18:41,001 - INFO - Distance to moamad4e: 0.9829414486885071
+2025-06-08 22:18:41,002 - INFO - Distance to yousef: 1.1116786003112793
+2025-06-08 22:18:41,002 - INFO - Distance to ahmed_morning: 1.0591659545898438
+2025-06-08 22:18:41,003 - INFO - Distance to empty: 0.9246987700462341
+2025-06-08 22:18:41,004 - INFO - Distance to alexa: 1.0272409915924072
+2025-06-08 22:18:41,004 - INFO - Distance to ahmed_kamal: 0.28457939624786377
+2025-06-08 22:18:42,679 - INFO - Distance to Mohammed: 1.0475809574127197
+2025-06-08 22:18:42,680 - INFO - Distance to Ahmed: 0.9557417631149292
+2025-06-08 22:18:42,681 - INFO - Distance to kamal: 0.9711729288101196
+2025-06-08 22:18:42,682 - INFO - Distance to moamad4e: 0.9577600955963135
+2025-06-08 22:18:42,682 - INFO - Distance to yousef: 1.1348481178283691
+2025-06-08 22:18:42,683 - INFO - Distance to ahmed_morning: 1.040716290473938
+2025-06-08 22:18:42,683 - INFO - Distance to empty: 0.9271142482757568
+2025-06-08 22:18:42,684 - INFO - Distance to alexa: 1.0377932786941528
+2025-06-08 22:18:42,685 - INFO - Distance to ahmed_kamal: 0.2838537096977234
+2025-06-08 22:18:44,171 - INFO - Distance to Mohammed: 1.0686734914779663
+2025-06-08 22:18:44,172 - INFO - Distance to Ahmed: 0.94870924949646
+2025-06-08 22:18:44,173 - INFO - Distance to kamal: 0.9545596241950989
+2025-06-08 22:18:44,173 - INFO - Distance to moamad4e: 0.9617529511451721
+2025-06-08 22:18:44,174 - INFO - Distance to yousef: 1.0997203588485718
+2025-06-08 22:18:44,175 - INFO - Distance to ahmed_morning: 1.0253938436508179
+2025-06-08 22:18:44,177 - INFO - Distance to empty: 0.9116514325141907
+2025-06-08 22:18:44,180 - INFO - Distance to alexa: 1.0901559591293335
+2025-06-08 22:18:44,181 - INFO - Distance to ahmed_kamal: 0.22889924049377441
+2025-06-08 22:18:45,772 - INFO - Distance to Mohammed: 1.0094102621078491
+2025-06-08 22:18:45,773 - INFO - Distance to Ahmed: 0.9160449504852295
+2025-06-08 22:18:45,773 - INFO - Distance to kamal: 0.9121068716049194
+2025-06-08 22:18:45,774 - INFO - Distance to moamad4e: 0.9243996143341064
+2025-06-08 22:18:45,775 - INFO - Distance to yousef: 1.0781995058059692
+2025-06-08 22:18:45,775 - INFO - Distance to ahmed_morning: 1.0092558860778809
+2025-06-08 22:18:45,776 - INFO - Distance to empty: 0.8817857503890991
+2025-06-08 22:18:45,776 - INFO - Distance to alexa: 1.0289803743362427
+2025-06-08 22:18:45,777 - INFO - Distance to ahmed_kamal: 0.2543306350708008
+2025-06-08 22:18:53,096 - INFO - Distance to Mohammed: 0.9496203064918518
+2025-06-08 22:18:53,096 - INFO - Distance to Ahmed: 0.8372628688812256
+2025-06-08 22:18:53,097 - INFO - Distance to kamal: 0.8309544920921326
+2025-06-08 22:18:53,098 - INFO - Distance to moamad4e: 0.8596240282058716
+2025-06-08 22:18:53,098 - INFO - Distance to yousef: 0.8813077807426453
+2025-06-08 22:18:53,099 - INFO - Distance to ahmed_morning: 0.8935774564743042
+2025-06-08 22:18:53,100 - INFO - Distance to empty: 0.8427568674087524
+2025-06-08 22:18:53,101 - INFO - Distance to alexa: 1.0024828910827637
+2025-06-08 22:18:53,102 - INFO - Distance to ahmed_kamal: 0.3133525252342224
+2025-06-08 22:18:55,367 - INFO - Distance to Mohammed: 1.0075587034225464
+2025-06-08 22:18:55,368 - INFO - Distance to Ahmed: 0.8516085743904114
+2025-06-08 22:18:55,368 - INFO - Distance to kamal: 0.8584624528884888
+2025-06-08 22:18:55,369 - INFO - Distance to moamad4e: 0.9247716665267944
+2025-06-08 22:18:55,369 - INFO - Distance to yousef: 0.8945026993751526
+2025-06-08 22:18:55,370 - INFO - Distance to ahmed_morning: 0.9087882041931152
+2025-06-08 22:18:55,371 - INFO - Distance to empty: 0.8600440621376038
+2025-06-08 22:18:55,372 - INFO - Distance to alexa: 1.0169475078582764
+2025-06-08 22:18:55,373 - INFO - Distance to ahmed_kamal: 0.2755657434463501
+2025-06-08 22:22:34,130 - INFO - Distance to Mohammed: 1.0201034545898438
+2025-06-08 22:22:34,130 - INFO - Distance to Ahmed: 0.990381121635437
+2025-06-08 22:22:34,131 - INFO - Distance to kamal: 0.9240063428878784
+2025-06-08 22:22:34,132 - INFO - Distance to moamad4e: 0.9642152190208435
+2025-06-08 22:22:34,132 - INFO - Distance to yousef: 1.0418776273727417
+2025-06-08 22:22:34,133 - INFO - Distance to ahmed_morning: 1.0399757623672485
+2025-06-08 22:22:34,133 - INFO - Distance to empty: 0.8446956872940063
+2025-06-08 22:22:34,134 - INFO - Distance to alexa: 1.1111571788787842
+2025-06-08 22:22:34,135 - INFO - Distance to ahmed_kamal: 0.15997135639190674
+2025-06-08 22:23:13,335 - INFO - Distance to Mohammed: 1.0518710613250732
+2025-06-08 22:23:13,336 - INFO - Distance to Ahmed: 1.001646876335144
+2025-06-08 22:23:13,336 - INFO - Distance to kamal: 0.980641782283783
+2025-06-08 22:23:13,337 - INFO - Distance to moamad4e: 0.9261351823806763
+2025-06-08 22:23:13,338 - INFO - Distance to yousef: 1.063010334968567
+2025-06-08 22:23:13,338 - INFO - Distance to ahmed_morning: 1.039762020111084
+2025-06-08 22:23:13,339 - INFO - Distance to empty: 0.8618547320365906
+2025-06-08 22:23:13,339 - INFO - Distance to alexa: 1.1128191947937012
+2025-06-08 22:23:13,340 - INFO - Distance to ahmed_kamal: 0.22068631649017334
+2025-06-08 22:23:18,619 - INFO - Distance to Mohammed: 0.9068359136581421
+2025-06-08 22:23:18,620 - INFO - Distance to Ahmed: 0.8122769594192505
+2025-06-08 22:23:18,620 - INFO - Distance to kamal: 0.8210042715072632
+2025-06-08 22:23:18,621 - INFO - Distance to moamad4e: 0.909095823764801
+2025-06-08 22:23:18,621 - INFO - Distance to yousef: 0.9347515106201172
+2025-06-08 22:23:18,622 - INFO - Distance to ahmed_morning: 0.7645836472511292
+2025-06-08 22:23:18,622 - INFO - Distance to empty: 0.8388614654541016
+2025-06-08 22:23:18,623 - INFO - Distance to alexa: 0.9880579113960266
+2025-06-08 22:23:18,623 - INFO - Distance to ahmed_kamal: 0.5217694044113159
+2025-06-08 22:23:20,669 - INFO - Distance to Mohammed: 0.9444338083267212
+2025-06-08 22:23:20,670 - INFO - Distance to Ahmed: 0.7769050002098083
+2025-06-08 22:23:20,670 - INFO - Distance to kamal: 0.8019904494285583
+2025-06-08 22:23:20,671 - INFO - Distance to moamad4e: 0.9142584800720215
+2025-06-08 22:23:20,671 - INFO - Distance to yousef: 0.8951851725578308
+2025-06-08 22:23:20,672 - INFO - Distance to ahmed_morning: 0.7870933413505554
+2025-06-08 22:23:20,672 - INFO - Distance to empty: 0.868870735168457
+2025-06-08 22:23:20,672 - INFO - Distance to alexa: 0.9647436141967773
+2025-06-08 22:23:20,673 - INFO - Distance to ahmed_kamal: 0.4858971834182739
+2025-06-08 22:23:24,013 - INFO - Distance to Mohammed: 1.0429259538650513
+2025-06-08 22:23:24,014 - INFO - Distance to Ahmed: 0.8969590067863464
+2025-06-08 22:23:24,014 - INFO - Distance to kamal: 0.8943313956260681
+2025-06-08 22:23:24,015 - INFO - Distance to moamad4e: 0.9331201314926147
+2025-06-08 22:23:24,015 - INFO - Distance to yousef: 0.9717119336128235
+2025-06-08 22:23:24,016 - INFO - Distance to ahmed_morning: 0.929090142250061
+2025-06-08 22:23:24,016 - INFO - Distance to empty: 0.8797705173492432
+2025-06-08 22:23:24,016 - INFO - Distance to alexa: 1.096801996231079
+2025-06-08 22:23:24,017 - INFO - Distance to ahmed_kamal: 0.13822197914123535
+2025-06-08 22:23:32,217 - INFO - Distance to Mohammed: 0.8766060471534729
+2025-06-08 22:23:32,218 - INFO - Distance to Ahmed: 0.9654582738876343
+2025-06-08 22:23:32,219 - INFO - Distance to kamal: 0.8259056806564331
+2025-06-08 22:23:32,220 - INFO - Distance to moamad4e: 0.7688016891479492
+2025-06-08 22:23:32,221 - INFO - Distance to yousef: 0.884751558303833
+2025-06-08 22:23:32,222 - INFO - Distance to ahmed_morning: 0.8432612419128418
+2025-06-08 22:23:32,222 - INFO - Distance to empty: 0.8580437898635864
+2025-06-08 22:23:32,223 - INFO - Distance to alexa: 0.9569846391677856
+2025-06-08 22:23:32,223 - INFO - Distance to ahmed_kamal: 0.9263787269592285
+2025-06-08 22:23:44,136 - INFO - Attempting to join capture thread.
+2025-06-08 22:23:44,550 - INFO - Application shutting down.
+2025-06-08 22:24:22,003 - INFO - Distance to Mohammed: 1.0770376920700073
+2025-06-08 22:24:22,004 - INFO - Distance to Ahmed: 0.9006102085113525
+2025-06-08 22:24:22,005 - INFO - Distance to kamal: 0.9002922773361206
+2025-06-08 22:24:22,006 - INFO - Distance to moamad4e: 1.0209294557571411
+2025-06-08 22:24:22,006 - INFO - Distance to yousef: 0.9804011583328247
+2025-06-08 22:24:22,007 - INFO - Distance to ahmed_morning: 0.975574791431427
+2025-06-08 22:24:22,008 - INFO - Distance to empty: 0.8310393691062927
+2025-06-08 22:24:22,009 - INFO - Distance to alexa: 1.1396266222000122
+2025-06-08 22:24:22,010 - INFO - Distance to ahmed_kamal: 0.1524319052696228
+2025-06-08 22:24:25,987 - INFO - Attempting to join capture thread.
+2025-06-08 22:24:26,288 - INFO - Application shutting down.
+2025-06-08 22:34:02,828 - INFO - Distance to Mohammed: 1.0625025033950806
+2025-06-08 22:34:02,829 - INFO - Distance to Ahmed: 1.0199410915374756
+2025-06-08 22:34:02,829 - INFO - Distance to kamal: 0.9840837121009827
+2025-06-08 22:34:02,830 - INFO - Distance to moamad4e: 0.9960170388221741
+2025-06-08 22:34:02,830 - INFO - Distance to yousef: 1.0503333806991577
+2025-06-08 22:34:02,831 - INFO - Distance to ahmed_morning: 1.0203325748443604
+2025-06-08 22:34:02,831 - INFO - Distance to empty: 0.9035220146179199
+2025-06-08 22:34:02,832 - INFO - Distance to alexa: 1.1231276988983154
+2025-06-08 22:34:02,833 - INFO - Distance to ahmed_kamal: 0.2068164348602295
+2025-06-08 22:34:07,087 - INFO - Distance to Mohammed: 1.061079740524292
+2025-06-08 22:34:07,088 - INFO - Distance to Ahmed: 1.017179012298584
+2025-06-08 22:34:07,088 - INFO - Distance to kamal: 0.9662964940071106
+2025-06-08 22:34:07,089 - INFO - Distance to moamad4e: 1.0278102159500122
+2025-06-08 22:34:07,090 - INFO - Distance to yousef: 1.0160683393478394
+2025-06-08 22:34:07,091 - INFO - Distance to ahmed_morning: 1.0615170001983643
+2025-06-08 22:34:07,092 - INFO - Distance to empty: 0.8690179586410522
+2025-06-08 22:34:07,093 - INFO - Distance to alexa: 1.1484743356704712
+2025-06-08 22:34:07,094 - INFO - Distance to ahmed_kamal: 0.19785535335540771
+2025-06-08 22:34:31,057 - INFO - Attempting to join capture thread.
+2025-06-08 22:34:31,404 - INFO - Application shutting down.
+2025-06-10 13:41:10,005 - INFO - Loading embedding predictor model...
+2025-06-10 13:41:11,864 - INFO - Embedding predictor loaded.
+2025-06-10 13:41:11,864 - INFO - Loading bounding box predictor model (YuNet)...
+2025-06-10 13:41:11,941 - INFO - Bounding box predictor loaded.
+2025-06-10 13:43:06,056 - INFO - Loading embedding predictor model...
+2025-06-10 13:43:07,080 - INFO - Embedding predictor loaded.
+2025-06-10 13:43:07,080 - INFO - Loading bounding box predictor model (YuNet)...
+2025-06-10 13:43:07,114 - INFO - Bounding box predictor loaded.
+2025-06-10 13:43:07,988 - INFO - Camera capture stopped.
+2025-06-10 13:43:14,813 - INFO - Started built-in camera capture (index: 0).
+2025-06-10 13:43:28,391 - INFO - Camera type selected: ESP32 Cam
+2025-06-10 13:43:29,157 - WARNING - ESP32 Cam connection error: <urlopen error timed out>. Retrying...
+2025-06-10 13:43:30,731 - WARNING - ESP32 Cam connection error: <urlopen error timed out>. Retrying...
+2025-06-10 13:43:32,253 - WARNING - ESP32 Cam connection error: <urlopen error timed out>. Retrying...
+2025-06-10 13:43:33,805 - WARNING - ESP32 Cam connection error: <urlopen error timed out>. Retrying...
+2025-06-10 13:43:35,327 - WARNING - ESP32 Cam connection error: <urlopen error timed out>. Retrying...
+2025-06-10 13:43:36,536 - INFO - Camera type selected: Built-in Cam
+2025-06-10 13:43:36,887 - WARNING - ESP32 Cam connection error: <urlopen error timed out>. Retrying...
+2025-06-10 13:43:46,058 - INFO - No match found. Closest was 0.63793 (Threshold: 0.250)
+2025-06-10 13:43:58,424 - INFO - No match found. Closest was 0.52851 (Threshold: 0.310)
+2025-06-10 13:44:05,046 - INFO - No match found. Closest was 0.55213 (Threshold: 0.310)
+2025-06-10 13:44:17,067 - INFO - No match found. Closest was 0.43400 (Threshold: 0.310)
+2025-06-10 13:44:23,630 - INFO - Match found: ahmed_kamal with distance 0.28250 (Threshold: 0.310)
+2025-06-10 13:44:52,572 - INFO - No match found. Closest was 0.43664 (Threshold: 0.310)
+2025-06-10 13:45:15,888 - INFO - Match found: ahmed_kamal with distance 0.42538 (Threshold: 0.430)
+2025-06-10 13:45:24,239 - INFO - Attempting to join capture thread.
+2025-06-10 13:45:24,684 - INFO - Application shutting down.
+2025-06-10 13:46:12,379 - INFO - Loading embedding predictor model...
+2025-06-10 13:46:13,658 - INFO - Embedding predictor loaded.
+2025-06-10 13:46:13,930 - INFO - Initializing YuNetFaceDetector...
+2025-06-10 13:46:13,945 - INFO - YuNetFaceDetector initialized.
+2025-06-10 13:46:13,945 - INFO - Camera capture stopped.
+2025-06-10 13:46:20,714 - INFO - Started built-in camera capture (index: 0).
+2025-06-10 13:47:48,310 - INFO - BBox model type selected: Haar Cascade Detector
+2025-06-10 13:48:06,682 - INFO - Attempting to join capture thread.
+2025-06-10 13:48:06,957 - INFO - Application shutting down.
+2025-06-10 13:48:13,207 - INFO - Loading embedding predictor model...
+2025-06-10 13:48:14,249 - INFO - Embedding predictor loaded.
+2025-06-10 13:48:14,498 - INFO - Initializing YuNetFaceDetector...
+2025-06-10 13:48:14,513 - INFO - YuNetFaceDetector initialized.
+2025-06-10 13:48:14,513 - INFO - Camera capture stopped.
+2025-06-10 13:48:21,634 - INFO - Started built-in camera capture (index: 0).
+2025-06-10 13:48:30,473 - INFO - No match found. Closest was 0.34083 (Threshold: 0.250)
+2025-06-10 13:48:47,112 - INFO - Attempting to join capture thread.
+2025-06-10 13:48:47,388 - INFO - Application shutting down.
+2025-06-10 13:54:08,361 - INFO - Loading embedding predictor model...
+2025-06-10 13:54:09,436 - INFO - Embedding predictor loaded.
+2025-06-10 13:54:09,732 - INFO - Person list refreshed.
+2025-06-10 14:02:33,888 - INFO - Loading embedding predictor model...
+2025-06-10 14:02:34,965 - INFO - Embedding predictor loaded.
+2025-06-10 14:08:29,839 - INFO - Loading embedding predictor model...
+2025-06-10 14:08:30,954 - INFO - Embedding predictor loaded.
+2025-06-10 14:15:39,037 - INFO - Loading embedding predictor model...
+2025-06-10 14:15:40,126 - INFO - Embedding predictor loaded.
+2025-06-10 14:16:44,937 - INFO - Loading embedding predictor model...
+2025-06-10 14:16:46,000 - INFO - Embedding predictor loaded.
+2025-06-10 14:17:54,337 - INFO - Loading embedding predictor model...
+2025-06-10 14:17:55,407 - INFO - Embedding predictor loaded.
+2025-06-10 14:19:33,717 - INFO - Loading embedding predictor model...
+2025-06-10 14:19:35,032 - INFO - Embedding predictor loaded.
+2025-06-10 14:21:57,199 - INFO - Loading embedding predictor model...
+2025-06-10 14:21:58,253 - INFO - Embedding predictor loaded.
+2025-06-10 14:25:45,547 - INFO - Loading embedding predictor model...
+2025-06-10 14:25:46,689 - INFO - Embedding predictor loaded.
+2025-06-10 14:26:26,662 - INFO - Loading embedding predictor model...
+2025-06-10 14:26:27,840 - INFO - Embedding predictor loaded.
+2025-06-10 14:35:34,365 - INFO - Loading embedding predictor model...
+2025-06-10 14:35:35,480 - INFO - Embedding predictor loaded.
+2025-06-10 14:35:50,436 - INFO - Loading embedding predictor model...
+2025-06-10 14:35:51,527 - INFO - Embedding predictor loaded.
+2025-06-10 14:40:25,585 - INFO - Loading embedding predictor model...
+2025-06-10 14:40:27,125 - INFO - Embedding predictor loaded.
+2025-06-10 14:40:45,833 - INFO - Loading embedding predictor model...
+2025-06-10 14:40:47,362 - INFO - Embedding predictor loaded.
+2025-06-10 14:40:56,556 - INFO - Loading embedding predictor model...
+2025-06-10 14:40:57,973 - INFO - Embedding predictor loaded.
+2025-06-10 14:45:50,109 - INFO - Loading embedding predictor model...
+2025-06-10 14:45:51,290 - INFO - Embedding predictor loaded.
+2025-06-10 14:47:02,698 - INFO - Loading embedding predictor model...
+2025-06-10 14:47:03,919 - INFO - Embedding predictor loaded.
+2025-06-10 14:50:00,034 - INFO - Loading embedding predictor model...
+2025-06-10 14:50:01,211 - INFO - Embedding predictor loaded.

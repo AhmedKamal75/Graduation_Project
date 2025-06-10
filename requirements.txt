@@ -1,9 +1,0 @@
-opencv-python
-numpy
-torch
-torchvision
-customtkinter
-pillow
-insightface
-onnx
-onnxruntime

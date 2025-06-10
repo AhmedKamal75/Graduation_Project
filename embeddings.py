@@ -259,7 +259,7 @@ class EmbeddingPredictor():
     
 if __name__ == "__main__":
     # and example
-    embedding_predictor = EmbeddingPredictor(model_path='models/resarksgd/resarksgd95.pth', device='cpu')
+    embedding_predictor = EmbeddingPredictor(model_path='models/resarksgd/resarksgdaug94.pth', device='cpu')
     # example face using random generator
     face = np.random.randint(0, 255, size=(224, 224, 3), dtype=np.uint8)
     embedding = embedding_predictor.generate_embedding(face=face)

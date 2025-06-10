@@ -78,7 +78,6 @@ The system now offers **multiple configurable face detection models** for flexib
 Graduation\_Project/  
 ├── app\_V2.py              \# Main application with enhanced features and GUI  
 ├── app\_V1.py              \# Previous main application version (renamed from app.py)  
-├── insightface\_app.py     \# Alternative implementation using InsightFace  
 ├── embeddings.py          \# Face recognition model implementation  
 ├── bounding\_box.py        \# Custom CNN face detection model implementation (and Haar Cascade integration)  
 ├── bounding\_box\_yunet.py  \# YuNet face detector implementation  

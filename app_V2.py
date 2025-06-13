@@ -709,31 +709,47 @@ class FaceRecognitionApp:
 
     def _update_frame_on_gui(self):
         """Updates the video feed label in the GUI. Called repeatedly by root.after()."""
-        if hasattr(self, 'current_frame'):
+        if hasattr(self, 'current_frame') and self.current_frame is not None:
             # Dynamically resize frame to fit current video_label size for better responsiveness
             label_width = self.video_label.winfo_width()
             label_height = self.video_label.winfo_height()
 
-            if label_width > 0 and label_height > 0:
-                # Maintain aspect ratio
+            # Only proceed if the label widget has been rendered and has a usable size
+            if label_width > 1 and label_height > 1: # Check for minimal size
                 img_width, img_height = self.current_frame.size
-                aspect_ratio = img_width / img_height
 
-                if label_width / label_height > aspect_ratio:
-                    new_height = label_height
-                    new_width = int(new_height * aspect_ratio)
+                # Only proceed if the image itself has valid dimensions
+                if img_width > 0 and img_height > 0:
+                    img_aspect_ratio = float(img_width) / img_height
+                    label_aspect_ratio = float(label_width) / label_height
+
+                    if label_aspect_ratio > img_aspect_ratio:
+                        # Label is wider or same height relative to image aspect ratio, fit to label's height
+                        new_height = label_height
+                        new_width = int(new_height * img_aspect_ratio)
+                    else:
+                        # Label is taller or same width relative to image aspect ratio, fit to label's width
+                        new_width = label_width
+                        new_height = int(new_width / img_aspect_ratio)
+
+                    # Ensure calculated dimensions are at least 1 pixel
+                    new_width = max(1, new_width)
+                    new_height = max(1, new_height)
+
+                    try:
+                        # Use Image.Resampling.LANCZOS for high-quality downsampling
+                        resized_frame = self.current_frame.resize((new_width, new_height), Image.Resampling.LANCZOS)
+                        # Wrap the PIL Image in CTkImage for proper scaling on HighDPI displays
+                        self.photo = ctk.CTkImage(light_image=resized_frame, dark_image=resized_frame, size=(new_width, new_height))
+
+                        self.video_label.configure(image=self.photo)
+                        self.video_label.image = self.photo # Keep a reference!
+                    except ValueError as e:
+                        logging.error(f"Error during image resize: {e}. Original: {img_width}x{img_height}, Target: {new_width}x{new_height}")
                 else:
-                    new_width = label_width
-                    new_height = int(new_width / aspect_ratio)
-
-                # Use Image.Resampling.LANCZOS for high-quality downsampling
-                resized_frame = self.current_frame.resize((new_width, new_height), Image.Resampling.LANCZOS)
-                # self.photo = ImageTk.PhotoImage(image=resized_frame)
-                # Wrap the PIL Image in CTkImage for proper scaling on HighDPI displays
-                self.photo = ctk.CTkImage(light_image=resized_frame, dark_image=resized_frame, size=(new_width, new_height))
-
-                self.video_label.configure(image=self.photo)
-                self.video_label.image = self.photo # Keep a reference!
+                    logging.warning(f"Skipping frame update: current_frame has invalid dimensions {img_width}x{img_height}")
+            # else: # Label not ready or too small, skip update for this cycle
+                # logging.debug(f"Skipping frame update: video_label not ready or too small {label_width}x{label_height}")
 
         if self.running: 
             self.root.after(30, self._update_frame_on_gui) # Schedule next frame update (approx 33 FPS)
@@ -1024,7 +1040,7 @@ if __name__ == "__main__":
         embedding_predictor=embedding_predictor,
         initial_camera_index=0, # Default built-in webcam index
         initial_esp32_url="http://192.168.1.5/cam-hi.jpg", # Default ESP32-CAM URL
-        initial_camera_type="Built-in Cam", # Default camera source on startup
+        initial_camera_type="ESP32 Cam", # Default camera source on startup ["Built-in Cam", "ESP32 Cam"]
         initial_bbox_model_type="YuNet Detector", # Default bounding box model on startup
         yunet_model_path=yunet_model_path,
         haar_cascade_path=haar_cascade_path,

@@ -10,7 +10,7 @@ import sqlite3
 from queue import Queue
 import time
 import logging
-import urllib.request # Keep for ESP32-CAM functionality
+import urllib.request # For IP Camera functionality
 
 from embeddings import EmbeddingPredictor
 # Import all BoundingBoxDetector types for selection
@@ -116,7 +116,7 @@ class PersonDatabase:
 class FaceRecognitionApp:
     """Main application class for the Face Recognition System GUI."""
     def __init__(self, database_path, embedding_predictor,
-                 initial_camera_index=0, initial_esp32_url="http://192.168.1.5/cam-hi.jpg",
+                 initial_camera_index=0, initial_ip_cam_url="http://192.168.1.5/cam-hi.jpg",
                  initial_camera_type="Built-in Cam", 
                  initial_bbox_model_type="YuNet Detector", # New: default bounding box model
                  yunet_model_path="models/bbox_models/YuNet/face_detection_yunet_2023mar.onnx", # YuNet model path
@@ -130,8 +130,8 @@ class FaceRecognitionApp:
         # Camera management variables
         self.cap = None  # OpenCV VideoCapture object for built-in camera
         self.built_in_camera_index = initial_camera_index
-        self.esp32_cam_url = initial_esp32_url
-        self.active_camera_type = initial_camera_type # "Built-in Cam" or "ESP32 Cam"
+        self.ip_cam_url = initial_ip_cam_url
+        self.active_camera_type = initial_camera_type # "Built-in Cam" or "IP Cam"
         
         # Bounding box predictor management variables
         self.yunet_model_path = yunet_model_path
@@ -235,8 +235,8 @@ class FaceRecognitionApp:
         self.camera_settings_frame = ctk.CTkFrame(self.settings_tab)
         self.camera_settings_frame.pack(fill="x", padx=10, pady=10)
         ctk.CTkLabel(self.camera_settings_frame, text="Camera Settings", font=("Arial", 18, "bold")).pack(padx=5, pady=5)
-        ctk.CTkLabel(self.camera_settings_frame, text="Camera Type:").pack(padx=5, pady=2)
-        self.camera_options = ["Built-in Cam", "ESP32 Cam"]
+        ctk.CTkLabel(self.camera_settings_frame, text="Camera Source:").pack(padx=5, pady=2)
+        self.camera_options = ["Built-in Cam", "IP Cam"]
         self.camera_type_var = ctk.StringVar(value=self.active_camera_type)
         self.camera_type_optionmenu = ctk.CTkOptionMenu(
             self.camera_settings_frame,
@@ -245,13 +245,13 @@ class FaceRecognitionApp:
             variable=self.camera_type_var
         )
         self.camera_type_optionmenu.pack(fill="x", padx=5, pady=5)
-        ctk.CTkLabel(self.camera_settings_frame, text="ESP32 Cam URL:").pack(padx=5, pady=2)
-        self.esp32_url_entry = ctk.CTkEntry(self.camera_settings_frame)
-        self.esp32_url_entry.insert(0, self.esp32_cam_url) # Set initial URL
-        self.esp32_url_entry.pack(fill="x", padx=5, pady=2)
+        ctk.CTkLabel(self.camera_settings_frame, text="IP Cam URL:").pack(padx=5, pady=2)
+        self.ip_cam_url_entry = ctk.CTkEntry(self.camera_settings_frame)
+        self.ip_cam_url_entry.insert(0, self.ip_cam_url) # Set initial URL
+        self.ip_cam_url_entry.pack(fill="x", padx=5, pady=2)
         self.apply_camera_settings_btn = ctk.CTkButton(self.camera_settings_frame, text="Apply Camera Settings", command=self.apply_camera_settings)
         self.apply_camera_settings_btn.pack(fill="x", padx=5, pady=5)
-        self._update_esp32_url_entry_state() # Initial state of ESP32 URL entry
+        self._update_ip_cam_url_entry_state() # Initial state of IP Cam URL entry
 
         # Face Detection Model Selection Group
         self.bbox_model_settings_frame = ctk.CTkFrame(self.settings_tab)
@@ -386,34 +386,34 @@ class FaceRecognitionApp:
         gui_handler.setLevel(logging.INFO) # Only log INFO and above to GUI
         logging.getLogger().addHandler(gui_handler)
 
-    def _update_esp32_url_entry_state(self):
-        """Updates the state of the ESP32 URL entry based on selected camera type."""
-        if self.camera_type_var.get() == "ESP32 Cam":
-            self.esp32_url_entry.configure(state="normal")
+    def _update_ip_cam_url_entry_state(self):
+        """Updates the state of the IP Cam URL entry based on selected camera type."""
+        if self.camera_type_var.get() == "IP Cam":
+            self.ip_cam_url_entry.configure(state="normal")
         else:
-            self.esp32_url_entry.configure(state="disabled")
+            self.ip_cam_url_entry.configure(state="disabled")
 
     def on_camera_type_selected(self, choice):
         """Callback for when a new camera type is selected from the OptionMenu."""
         self.active_camera_type = choice
         logging.info(f"Camera type selected: {self.active_camera_type}")
-        self._update_esp32_url_entry_state()
+        self._update_ip_cam_url_entry_state()
         self.status_label.configure(text=f"Please click 'Apply Camera Settings' to switch to {self.active_camera_type}.", text_color="blue")
 
     def apply_camera_settings(self):
         """Applies the selected camera settings (type and URL/index) and restarts capture."""
-        new_esp32_url = self.esp32_url_entry.get().strip()
-        if self.active_camera_type == "ESP32 Cam" and not new_esp32_url:
-            messagebox.showerror("Configuration Error", "ESP32 Cam URL cannot be empty when selected.")
-            self.status_label.configure(text="Error: ESP32 URL is empty.", text_color="red")
+        new_ip_cam_url = self.ip_cam_url_entry.get().strip()
+        if self.active_camera_type == "IP Cam" and not new_ip_cam_url:
+            messagebox.showerror("Configuration Error", "IP Cam URL cannot be empty when selected.")
+            self.status_label.configure(text="Error: IP Cam URL is empty.", text_color="red")
             # Revert to previous camera type if invalid input
-            self.camera_type_var.set("Built-in Cam" if self.active_camera_type == "ESP32 Cam" else "ESP32 Cam")
+            self.camera_type_var.set("Built-in Cam" if self.active_camera_type == "IP Cam" else "IP Cam")
             self.active_camera_type = self.camera_type_var.get()
-            self._update_esp32_url_entry_state()
+            self._update_ip_cam_url_entry_state()
             return
 
-        self.esp32_cam_url = new_esp32_url
-        logging.info(f"Applying camera settings: type={self.active_camera_type}, URL={self.esp32_cam_url}")
+        self.ip_cam_url = new_ip_cam_url
+        logging.info(f"Applying camera settings: type={self.active_camera_type}, URL={self.ip_cam_url}")
         
         # Stop current capture first
         self._stop_camera_capture()
@@ -587,15 +587,15 @@ class FaceRecognitionApp:
                 return
             logging.info(f"Started built-in camera capture (index: {self.built_in_camera_index}).")
             self.status_label.configure(text="Built-in camera connected.", text_color="green")
-        elif self.active_camera_type == "ESP32 Cam":
-            if not self.esp32_cam_url:
-                messagebox.showerror("Configuration Error", "ESP32 Cam URL is not set.")
-                self.status_label.configure(text="ESP32 Cam URL not set.", text_color="red")
+        elif self.active_camera_type == "IP Cam":
+            if not self.ip_cam_url:
+                messagebox.showerror("Configuration Error", "IP Cam URL is not set.")
+                self.status_label.configure(text="IP Cam URL not set.", text_color="red")
                 self.running = False
                 return
-            logging.info(f"Attempting to connect to ESP32 Cam at URL: {self.esp32_cam_url}")
-            self.status_label.configure(text=f"Connecting to ESP32 Cam: {self.esp32_cam_url}...", text_color="yellow")
-            # ESP32 cam doesn't use cv2.VideoCapture directly, so self.cap remains None
+            logging.info(f"Attempting to connect to IP Cam at URL: {self.ip_cam_url}")
+            self.status_label.configure(text=f"Connecting to IP Cam: {self.ip_cam_url}...", text_color="yellow")
+            # IP cam doesn't use cv2.VideoCapture directly, so self.cap remains None
             # The capture_frames method will handle the urllib.request connection.
         else:
             messagebox.showerror("Camera Error", "Unknown camera type selected.")
@@ -658,24 +658,24 @@ class FaceRecognitionApp:
                     self.root.after(0, lambda: self.status_label.configure(text="Built-in camera stream lost.", text_color="red"))
                     continue
 
-            elif self.active_camera_type == "ESP32 Cam":
+            elif self.active_camera_type == "IP Cam":
                 try:
-                    img_resp = urllib.request.urlopen(self.esp32_cam_url, timeout=0.5) # Shorter timeout for faster feedback
+                    img_resp = urllib.request.urlopen(self.ip_cam_url, timeout=0.5) # Shorter timeout for faster feedback
                     img_arr = np.array(bytearray(img_resp.read()), dtype=np.uint8)
                     frame = cv2.imdecode(img_arr, -1)
                     if frame is None:
                         raise ValueError("Could not decode image from URL.")
                     # Update status once connection is successful
-                    self.root.after(0, lambda: self.status_label.configure(text="ESP32 Cam connected.", text_color="green"))
+                    self.root.after(0, lambda: self.status_label.configure(text="IP Cam connected.", text_color="green"))
 
                 except urllib.error.URLError as e:
-                    logging.warning(f"ESP32 Cam connection error: {e}. Retrying...")
-                    self.root.after(0, lambda: self.status_label.configure(text=f"ESP32 Cam error: {e}. Retrying...", text_color="orange"))
+                    logging.warning(f"IP Cam connection error: {e}. Retrying...")
+                    self.root.after(0, lambda: self.status_label.configure(text=f"IP Cam error: {e}. Retrying...", text_color="orange"))
                     time.sleep(1) # Wait before retry
                     continue
                 except Exception as e:
-                    logging.error(f"Error fetching/decoding ESP32 Cam frame: {e}. Retrying...")
-                    self.root.after(0, lambda: self.status_label.configure(text=f"ESP32 Cam decode error: {e}. Retrying...", text_color="orange"))
+                    logging.error(f"Error fetching/decoding IP Cam frame: {e}. Retrying...")
+                    self.root.after(0, lambda: self.status_label.configure(text=f"IP Cam decode error: {e}. Retrying...", text_color="orange"))
                     time.sleep(1) # Wait before retry
                     continue
             
@@ -971,8 +971,8 @@ class FaceRecognitionApp:
         self.login_btn.configure(state=state)
         self.apply_camera_settings_btn.configure(state=state)
         self.camera_type_optionmenu.configure(state=state)
-        # Ensure ESP32 URL entry state is correct
-        self.esp32_url_entry.configure(state=state if self.camera_type_var.get() == "ESP32 Cam" else "disabled")
+        # Ensure IP Cam URL entry state is correct
+        self.ip_cam_url_entry.configure(state=state if self.camera_type_var.get() == "IP Cam" else "disabled")
         
         self.apply_bbox_model_btn.configure(state=state)
         self.bbox_model_type_optionmenu.configure(state=state)
@@ -1039,12 +1039,12 @@ if __name__ == "__main__":
         database_path=database_path,
         embedding_predictor=embedding_predictor,
         initial_camera_index=0, # Default built-in webcam index
-        initial_esp32_url="http://192.168.1.5/cam-hi.jpg", # Default ESP32-CAM URL
-        initial_camera_type="Built-in Cam", # Default camera source on startup ["Built-in Cam", "ESP32 Cam"]
+        initial_ip_cam_url="http://192.168.1.5/cam-hi.jpg", # Default IP Cam URL (e.g., for an ESP32-CAM)
+        initial_camera_type="Built-in Cam", # Default camera source on startup ["Built-in Cam", "IP Cam"]
         initial_bbox_model_type="YuNet Detector", # Default bounding box model on startup
         yunet_model_path=yunet_model_path,
         haar_cascade_path=haar_cascade_path,
-        custom_cnn_model_path=custom_cnn_model_path, # Pass the path for the custom CNN
+        custom_cnn_model_path=custom_cnn_model_path,
         threshold=0.25, # Cosine distance threshold. Lower values require higher similarity (e.g., 0.1 is very strict, 0.4 is more lenient).
         num_samples=5 # Number of samples to average for each embedding (improves accuracy)
     )

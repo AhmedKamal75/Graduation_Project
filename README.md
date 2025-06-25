@@ -4,13 +4,13 @@ A robust facial recognition application built with Python, utilizing custom trai
 
 ## **Features**
 
-* Real-time face detection and recognition with **configurable camera sources (Built-in, ESP32-CAM)**.  
+* Real-time face detection and recognition with **configurable camera sources (Built-in, IP Cam)**.  
 * **Multiple Face Detection Model Support:** Easily switch between **YuNet, Haar Cascade, and a Custom CNN model**.  
 * Custom-trained models for enhanced accuracy.  
 * User registration and authentication system.  
 * Access control management.  
 * **Enhanced GUI interface** built with CustomTkinter, featuring **tabbed navigation for Main Controls, Settings, and Person Management**.  
-* Support for IP camera integration (e.g., ESP32-CAM).  
+* Support for IP camera integration (e.g., ESP32-CAM, etc.).  
 * Queue-based embedding averaging for better recognition robustness (num\_samples configurable).  
 * Thread-safe database operations for stable performance.  
 * **Real-time display of recognition threshold and last match distance.**  
@@ -23,7 +23,7 @@ A robust facial recognition application built with Python, utilizing custom trai
 * **Deep Learning:** PyTorch  
 * **Computer Vision:** OpenCV  
 * **Database:** SQLite  
-* **Camera Interface:** Built-in Webcams, ESP32-CAM (via HTTP stream)
+* **Camera Interface:** Built-in Webcams, IP Cameras (via HTTP stream)
 
 ## **Models**
 
@@ -67,7 +67,7 @@ The system now offers **multiple configurable face detection models** for flexib
 
 * Python 3.8+  
 * CUDA capable GPU (recommended for faster processing)  
-* ESP32-CAM (optional, for IP camera usage)  
+* IP Camera (optional, e.g., ESP32-CAM)  
 * Minimum 4GB RAM  
 * Storage: \~500MB for models
 
@@ -135,8 +135,8 @@ Graduation\_Project/
 
 1. Navigate to the "Settings" tab.  
 2. **Camera Settings:**  
-   * Select "Camera Type": "Built-in Cam" or "ESP32 Cam".  
-   * If "ESP32 Cam" is selected, enter its stream URL (e.g., http://192.168.1.5/cam-hi.jpg).  
+   * Select "Camera Source": "Built-in Cam" or "IP Cam".  
+   * If "IP Cam" is selected, enter its stream URL (e.g., http://192.168.1.5/cam-hi.jpg).  
    * Click "Apply Camera Settings" to switch.  
 3. **Face Detection Model:**  
    * Select "Model Type": "YuNet Detector", "Haar Cascade Detector", or "Custom CNN Detector".  

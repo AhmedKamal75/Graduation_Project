@@ -61,8 +61,6 @@ The system now offers **multiple configurable face detection models** for flexib
 * Testing dataset: [PINS Face Recognition Dataset](https://www.kaggle.com/datasets/hereisburak/pins-face-recognition) (Kaggle).  
 * Training notebook: models/resarksgd/arkface-residual-connections-part-2.ipynb ([Kaggle Training Notebook](https://www.kaggle.com/code/ahmedkamal75/arkface-residual-connections-part-2)).  
 * Models:  
-  * Not augmented 88% accuracy: [Kaggle Model](https://www.kaggle.com/models/ahmedkamal75/resarksgd-acc-88/)  
-  * Not augmented 95% accuracy: [Kaggle Model](https://www.kaggle.com/models/ahmedkamal75/resarksgd95/)  
   * Augmented 94% accuracy: [Kaggle Notebook](https://www.kaggle.com/code/ahmedkamal75/arkface-residual-connections-part-2/notebook?scriptVersionId=217035765)
 
 ## **Requirements**
@@ -95,7 +93,6 @@ Graduation\_Project/
 
 2. Create a virtual environment and activate it:  
    python3 \-m venv .venv      \# Using .venv is a common convention  
-   source .venv/bin/activate  \# Linux/macOS  
    .venv\\Scripts\\activate     \# Windows
 
 3. Install the required dependencies:  
@@ -103,9 +100,9 @@ Graduation\_Project/
 
 4. Download the necessary pre-trained models:  
    * **Face Recognition Model (e.g.,** resarksgdaug94.pth **or** resarksgd95.pth **):**  
-     * Download from: [Kaggle Model \- 95% accuracy](https://www.kaggle.com/models/ahmedkamal75/resarksgd95/)  
+     * Download from: [Kaggle Model \- 94% accuracy](https://www.kaggle.com/code/ahmedkamal75/arkface-residual-connections-part-2/notebook?scriptVersionId=217035765) , you can download it from the output section.
      * Place the downloaded .pth file in the models/resarksgd/ directory.  
-   * **YuNet Face Detector Model (**face\_detection\_yunet\_2023mar.onnx **):**  
+   * **YuNet Face Detector Model** (face\_detection\_yunet\_2023mar.onnx **):**  
      * Download if not already present (often included with OpenCV or specific downloads). Ensure it is in models/bbox\_models/YuNet/.  
    * **Custom CNN Face Detector Model (e.g.,** bbox\_v5\_randomly\_augmented\_epoch\_3.pth **):**  
      * Download if you intend to use this model. Ensure it is in models/bbox\_models/v5/.  

@@ -1040,7 +1040,7 @@ if __name__ == "__main__":
         embedding_predictor=embedding_predictor,
         initial_camera_index=0, # Default built-in webcam index
         initial_esp32_url="http://192.168.1.5/cam-hi.jpg", # Default ESP32-CAM URL
-        initial_camera_type="ESP32 Cam", # Default camera source on startup ["Built-in Cam", "ESP32 Cam"]
+        initial_camera_type="Built-in Cam", # Default camera source on startup ["Built-in Cam", "ESP32 Cam"]
         initial_bbox_model_type="YuNet Detector", # Default bounding box model on startup
         yunet_model_path=yunet_model_path,
         haar_cascade_path=haar_cascade_path,

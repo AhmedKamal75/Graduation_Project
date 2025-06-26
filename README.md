@@ -1,6 +1,9 @@
 # **Face Recognition System**
 
-A robust facial recognition application built with Python, utilizing custom trained deep learning models for face detection and recognition.
+A robust facial recognition application built with Python, utilizing custom trained deep learning models for face detection and recognition, and it doesn't have multi-face detection support.
+
+## **Overview**
+This project implements a comprehensive facial recognition system designed for security and access control. It leverages advanced deep learning models for accurate face detection and recognition, offering flexibility with multiple configurable detection models (YuNet, Haar Cascade, Custom CNN) and a robust ArcFace-based recognition model. The system features a user-friendly GUI built with CustomTkinter, enabling real-time monitoring, user registration, access management, and dynamic settings adjustments for camera sources and detection models.
 
 ## **Features**
 
@@ -49,7 +52,7 @@ The system now offers **multiple configurable face detection models** for flexib
   * Training notebook: models/bbox\_models/v5/facial-detection-celebA-bbox-optimized.ipynb ([Kaggle Training Notebook](https://www.kaggle.com/code/ahmedkamal75/facial-detection-celeba-bbox-optimized)).  
   * Models:  
     * Without Augmentations: [Kaggle Model](https://www.kaggle.com/models/ahmedkamal75/bbox_model_v5_epoch_8/)  
-    * With Augmentations: [Kaggle Model](https://www.kaggle.com/models/ahmedkamal75/bbox_v5_augmented_epoch_50)
+    * With Augmentations: [Kaggle Model](https://www.kaggle.com/models/ahmedkamal75/bbox_v5_randomly_augmented_epoch_3)
 
 ### **Face Recognition**
 

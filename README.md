@@ -82,6 +82,7 @@ Graduation\_Project/
 ├── embeddings.py          \# Face recognition model implementation  
 ├── bounding\_box.py        \# Custom CNN face detection model implementation (and Haar Cascade integration)  
 ├── bounding\_box\_yunet.py  \# YuNet face detector implementation  
+├── esp32cam.c             \# Example Arduino code for ESP32-CAM IP Camera
 └── models/  
     ├── bbox\_models/       \# Face detection models  
         ├── v5/            \# Custom trained models (e.g., bbox\_v5\_randomly\_augmented\_epoch\_3.pth)  
@@ -91,15 +92,21 @@ Graduation\_Project/
 ## **Installation**
 
 1. Clone the repository:  
+```
    git clone https://github.com/AhmedKamal75/Graduation\_Project.git  
    cd Graduation\_Project
+```
 
 2. Create a virtual environment and activate it:  
+```
    python3 \-m venv .venv      \# Using .venv is a common convention  
    .venv\\Scripts\\activate     \# Windows
+```
 
 3. Install the required dependencies:  
+```
    pip install \-r requirements.txt
+```
 
 4. Download the necessary pre-trained models:  
    * **Face Recognition Model (e.g.,** resarksgdaug94.pth **or** resarksgd95.pth **):**  
@@ -110,6 +117,30 @@ Graduation\_Project/
    * **Custom CNN Face Detector Model (e.g.,** bbox\_v5\_randomly\_augmented\_epoch\_3.pth **):**  
      * Download if you intend to use this model. Ensure it is in models/bbox\_models/v5/.  
 5. No manual path updates are needed in app\_V2.py for model paths, as they are specified at the top of the if \_\_name\_\_ \== "\_\_main\_\_": block. However, ensure the files exist at the specified paths.
+
+### **Setting up the ESP32-CAM (Optional)**
+
+If you wish to use an ESP32-CAM as an IP camera source, an example Arduino sketch is provided in `esp32cam.c`. This sketch turns the ESP32-CAM into a web server that streams video.
+
+1.  **Prerequisites:**
+    *   Arduino IDE installed.
+    *   ESP32 Board support added to the Arduino IDE.
+    *   **Required Libraries:** Install the `esp32cam` library by `Junxiao Shi`, and the `esp32` library by `Espressif Systems` through the Arduino Library Manager (`Sketch` > `Include Library` > `Manage Libraries...`).
+
+2.  **Configuration:**
+    *   Open `esp32cam.c` in the Arduino IDE.
+    *   Update the `WIFI_SSID` and `WIFI_PASS` variables with your Wi-Fi network credentials.
+
+3.  **Flashing:**
+    *   Connect your ESP32-CAM to your computer via a USB-to-TTL serial adapter.
+    *   In the Arduino IDE, go to `Tools` -> `Board` and select your ESP32-CAM model (e.g., "AI Thinker ESP32-CAM").
+    *   Go to `Tools` -> `Port` and select the correct COM port for your device (e.g., `COM3`, `COM5`).
+    *   Click the "Upload" button to flash the sketch to your device.
+
+4.  **Usage:**
+    *   After flashing, open the Serial Monitor (`Tools` -> `Serial Monitor`) and set the baud rate to `115200`.
+    *   The ESP32-CAM will connect to your Wi-Fi and print its IP address and the available camera stream URLs (e.g., `http://192.168.1.5/cam-hi.jpg`).
+    *   Use one of these URLs in the "IP Cam" settings within the main Python application.
 
 ## **Usage Examples**
 
@@ -139,7 +170,7 @@ Graduation\_Project/
 1. Navigate to the "Settings" tab.  
 2. **Camera Settings:**  
    * Select "Camera Source": "Built-in Cam" or "IP Cam".  
-   * If "IP Cam" is selected, enter its stream URL (e.g., http://192.168.1.5/cam-hi.jpg).  
+   * If "IP Cam" is selected, enter its stream URL. See the "Setting up the ESP32-CAM" section for instructions on how to get this URL (e.g., `http://192.168.1.5/cam-hi.jpg`).
    * Click "Apply Camera Settings" to switch.  
 3. **Face Detection Model:**  
    * Select "Model Type": "YuNet Detector", "Haar Cascade Detector", or "Custom CNN Detector".  
